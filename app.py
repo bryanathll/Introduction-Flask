@@ -13,7 +13,16 @@ def index():
 @app.route("/prediction", methods = ["POST"])
 def prediction():
     if request.method == "POST":
-        return render_template("prediction.html")
+        text = request.form["text"] #bisa pake request.form.get("text")
+        vec = cv.transform([text]).toarray()
+        result = model.predict(vec)
+        if result[0] == 0:
+            prediction_text = "Ham"
+        else:
+            prediction_text = "Spam"
+        return render_template("prediction.html",
+                               prediction_text=prediction_text,
+                               text = text)
 
 
 if __name__ == "__main__":
