@@ -13,7 +13,7 @@ def index():
 @app.route("/prediction", methods = ["POST"])
 def prediction():
     if request.method == "POST":
-        return render_template(prediction.html)
+        return render_template("prediction.html")
 
 
 if __name__ == "__main__":
