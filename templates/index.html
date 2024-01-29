@@ -9,8 +9,10 @@
 
 <body>
   <h1>Hello world</h1>
-
-  <p> keren uga </p>
+  <form action="/prediction" method="POST">
+    <label for="text">input new text to predict</label>
+    <input type="text" name="text" required>
+    <button type="submit">Predict</button>
 </body>
 
 </html>
