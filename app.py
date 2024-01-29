@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pickle
 
 app = Flask(__name__)
@@ -8,7 +8,13 @@ cv = pickle.load(open('vectorizer.pkl', 'rb'))
 
 @app.route("/")
 def index():
-    return("hello world saudara")
+    return render_template("index.html")
+
+@app.route("/prediction", methods = ["POST"])
+def prediction():
+    if request.method == "POST":
+        return render_template(prediction)
+
 
 if __name__ == "__main__":
     app.run()
