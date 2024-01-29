@@ -15,7 +15,7 @@ def index():
     </head>
     <body>
         <h1> Hello world</h1>
-        <P>CANGGIH JUGA anjay</P>
+        <P>CANGGIH JUGA</P>
     </body>
     </html>
     """
